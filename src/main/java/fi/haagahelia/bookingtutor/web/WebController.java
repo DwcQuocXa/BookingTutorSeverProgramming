@@ -33,25 +33,33 @@ public class WebController {
         return "login";
     }
 
+    // @return a Rest API Json file with all the languages in database
     @RequestMapping(value = "/languages", method = RequestMethod.GET)
     public @ResponseBody List<LanguageEntity> langListRest() {
         return (List<LanguageEntity>) langRepository.findAll();
     }
 
+    // @return a Rest API Json file of language with a specific Id
     @RequestMapping(value = "/language/{id}", method = RequestMethod.GET)
     public @ResponseBody Optional<LanguageEntity> findLangRest(@PathVariable("id") Long Id) {
         return langRepository.findById(Id);
     }
+
+    // @return a Rest API Json file of all the lessons in database
 
     @RequestMapping(value = "/lessons", method = RequestMethod.GET)
     public @ResponseBody List<LessonEntity> lessonListRest() {
         return (List<LessonEntity>) lessonRepository.findAll();
     }
 
+    // @return a Rest API Json file of lesson with a specific Id
+
     @RequestMapping(value = "/lesson/{id}", method = RequestMethod.GET)
     public @ResponseBody Optional<LessonEntity> findLessonRest(@PathVariable("id") Long Id) {
         return lessonRepository.findById(Id);
     }
+
+    // @return Admin page
 
     @RequestMapping(value = "/lessonlist")
     public String lessonList(Model model) {
@@ -60,15 +68,21 @@ public class WebController {
         return "lessonlist";
     }
 
+    // @return a Rest API Json file with all the tutors
+
     @RequestMapping(value = "/tutors", method = RequestMethod.GET)
     public @ResponseBody List<TutorEntity> tutorListRest() {
         return (List<TutorEntity>) tutorRepository.findAll();
     }
 
+    // @return a Rest API Json file of the tutor with a specific Id
+
     @RequestMapping(value = "/tutor/{id}", method = RequestMethod.GET)
     public @ResponseBody Optional<TutorEntity> findTutorRest(@PathVariable("id") Long Id) {
         return tutorRepository.findById(Id);
     }
+
+    // @return the html page list of all tutors
 
     @RequestMapping(value = "/tutorlist")
     public String tutorList(Model model) {
@@ -76,11 +90,15 @@ public class WebController {
         return "tutorlist";
     }
 
+    // @return a Rest API Json file of the schedule with a specific Id
+
     @RequestMapping(value = "/schedule/{id}")
     public String schedule(@PathVariable("id") Long tutorId, Model model) {
         model.addAttribute("tutors", tutorRepository.findById(tutorId).get());
         return "schedule";
     }
+
+    // @return booktutor page
 
     @RequestMapping(value = "/booktutor")
     public String bookTutor(Model model) {
@@ -90,6 +108,8 @@ public class WebController {
 
         return "booktutor";
     }
+
+    // @return a form to edit
 
     @RequestMapping(value = "/edit/{id}")
     public String edit(@PathVariable("id") Long lessonId, Model model) {

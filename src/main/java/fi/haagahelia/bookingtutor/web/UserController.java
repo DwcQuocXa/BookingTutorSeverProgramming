@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import fi.haagahelia.bookingtutor.SignUpForm;
 import fi.haagahelia.bookingtutor.domain.User;
 import fi.haagahelia.bookingtutor.repository.UserRepository;
+import fi.haagahelia.bookingtutor.services.SignUpForm;
 
 import javax.validation.Valid;
 

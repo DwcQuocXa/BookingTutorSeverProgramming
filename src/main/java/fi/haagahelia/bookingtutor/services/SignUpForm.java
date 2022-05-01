@@ -1,4 +1,4 @@
-package fi.haagahelia.bookingtutor.services;
+package fi.haagahelia.bookingtutor;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.Size;

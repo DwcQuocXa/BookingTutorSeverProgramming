@@ -10,11 +10,14 @@
             crossorigin="anonymous"
         />
     </head>
-    <body>
+    <body> 
         <div class="container">
             <br />
             <h1>Edit Lesson</h1>
+            <br />
             <a href="/lessonlist" class="btn btn-warning">Back</a>
+            <br />
+            <br />
             <div>
                 <form th:object="${lesson}" th:action="@{../edit}" action="#" method="post">
                     <input type="hidden" th:field="*{id}" class="form-control" />
@@ -49,8 +52,9 @@
                             th:text="${language.name}"
                         ></option>
                     </select>
-
+                    <br />
                     <input type="submit" class="btn btn-success" value="Save"></input>
+                    <br />
                 </form>
             </div>
         </div>
