@@ -19,7 +19,7 @@ import fi.haagahelia.bookingtutor.domain.User;
 public class UserRepositoryTest {
 
     @Autowired
-    private UserRepository userRepository
+    private UserRepository userRepository;
 
     @Test
     public void findByUserNameShouldReturnUser() {
