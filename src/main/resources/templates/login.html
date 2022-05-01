@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Please sign in</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+        <style>
+            body {
+                font-family: 'Raleway', sans-serif;
+                background-color: #e7e7e7;
+            }
+            .wrapper {
+                width: 800px;
+                height: 600px;
+                position: relative;
+                margin: 3% auto;
+                box-shadow: 2px 18px 70px 0px #9d9d9d;
+                overflow: hidden;
+                background: linear-gradient(to left, #68c5ca, #67dea3);
+
+            }
+
+            .text {
+                margin-left: 20px;
+                color: black;
+                /* display: none; */
+                transition: all 0.5s ease-in-out;
+                transition-delay: 0.3s;
+                
+                a,
+                a:visited {
+                    font-size: 36px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    display: block;
+                }
+
+                hr {
+                    width: 10%;
+                    float: left;
+                    background-color: #fff;
+                    font-size: 16px;
+                }
+
+                input {
+                    margin-top: 30px;
+                    height: 40px;
+                    width: 300px;
+                    border-radius: 2px;
+                    border: none;
+                    background-color: #444;
+                    opacity: 0.6;
+                    outline: none;
+                    color: #fff;
+                    padding-left: 10px;
+                }
+
+                input[type='text'] {
+                    margin-top: 60px;
+                }
+
+                button {
+                    margin-top: 60px;
+                    height: 40px;
+                    width: 140px;
+                    outline: none;
+                }
+
+                .login-btn {
+                    background: #fff;
+                    border: none;
+                    border-radius: 2px;
+                    color: #696a86;
+                }
+
+                .signup-btn {
+                    background: transparent;
+                    border: 2px solid #fff;
+                    border-radius: 2px;
+                    color: #fff;
+                    margin-left: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="text">
+                <br />
+                <div th:if="${param.error}" class="error">Invalid username or password. Please try again</div>
+                <h1>Do you want to book a tutor?</h1>
+                <p>
+                    With few simple steps, you can book a coding tutor with experienced in many languages: Java, JavaScript,
+                    C#, Python
+                </p>
+                <br />
+
+                <h3>Coding never easier than now!</h3>
+                <br />
+                <div th:if="${param.error}">Invalid username or password.</div>
+                <form th:action="@{/login}" method="post">
+                    <input type="text" name="username" placeholder="User name" required autofocus />
+                    <br />
+                    <br />
+                    <input type="password" name="password" placeholder="Password" required />
+
+                    <br />
+                    <br />
+                    <button class="login-btn" type="submit">Log In</button>
+                </form>
+                <br />
+                <br />
+                <p>
+                    Don't have an account?
+                    <span>
+                        <button class="signup-btn"><a th:href="@{/signup}">Sign Up</a></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
