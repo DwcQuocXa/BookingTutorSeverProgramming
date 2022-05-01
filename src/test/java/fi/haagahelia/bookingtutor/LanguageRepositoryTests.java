@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import fi.haagahelia.bookingtuto.domain.LanguageEntity;
-import fi.haagahelia.bookingtuto.repository.LanguageRepository;
+import fi.haagahelia.bookingtutor.domain.LanguageEntity;
+import fi.haagahelia.bookingtutor.repository.LanguageRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
